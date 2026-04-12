@@ -753,8 +753,8 @@ function showPage(id){
     <div class="modal-title" id="m-title">Unlock</div>
     <div class="modal-sub" id="m-sub">Pay via UPI and send screenshot on WhatsApp for instant access.</div>
     <div style="text-align:center;">
-      <div class="qr-wrap" style="width:136px;height:136px;margin:0 auto 11px;">
-        <img id="m-qr" src="" alt="UPI QR" onerror="this.parentElement.innerHTML='<div style=\'font-size:.58rem;color:#666;padding:8px;line-height:1.6;\'>QR loads<br>when online</div>'">
+      <div class="qr-wrap" id="m-qr-wrap" style="width:136px;height:136px;margin:0 auto 11px;">
+        <img id="m-qr" src="" alt="UPI QR">
       </div>
       <div class="upi-id">interactive.dimensions0007@uboi</div>
       <div class="bank-nm" style="margin-bottom:5px;">Union Bank of India — i3D Studio</div>
@@ -1119,10 +1119,14 @@ function toggleLib(btn,id){
 // ══════════════════════════════════════════
 function openUnlock(title,price,desc){
   mTitle=title;mPrice=price;
-  document.getElementById('m-title').textContent=title;
-  document.getElementById('m-sub').textContent=`One-time unlock: ₹${parseInt(price).toLocaleString('en-IN')}. ${desc}. Pay via UPI and send screenshot on WhatsApp for instant access.`;
+  const titleEl=document.getElementById('m-title');
+  const subEl=document.getElementById('m-sub');
+  if(titleEl) titleEl.textContent=title;
+  if(subEl) subEl.textContent=`One-time unlock: \u20b9${parseInt(price).toLocaleString('en-IN')}. ${desc}. Pay via UPI and send screenshot on WhatsApp for instant access.`;
   const upi=`upi://pay?pa=interactive.dimensions0007@uboi&pn=i3D%20Studio&am=${price}&tn=${encodeURIComponent(title)}`;
-  document.getElementById('m-qr').src=`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upi)}`;
+  const qrSrc=`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upi)}`;
+  const wrap=document.getElementById('m-qr-wrap');
+  if(wrap) wrap.innerHTML=`<img id="m-qr" src="${qrSrc}" alt="UPI QR" onerror="this.outerHTML='<div style=\'font-size:.58rem;color:#666;padding:8px;line-height:1.6;\'>QR loads<br>when online</div>'">`;
   document.getElementById('uModal').classList.add('open');
 }
 function closeModal(){document.getElementById('uModal').classList.remove('open');}
