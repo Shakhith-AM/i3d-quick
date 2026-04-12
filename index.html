@@ -446,21 +446,21 @@ function showPage(id){
     <div class="ai-banner">
       <div class="ai-banner-top">
         <div>
-          <div class="ai-title">Architectural Intelligence — i3D Studio</div>
-          <div class="ai-sub">Full project engagement follows the Council of Architecture recommended fee structure. This covers design, working drawings, site coordination, and supervision — a complete professional service from concept to completion.</div>
+          <div class="ai-title">i3D Studio Envelope — Architectural Intelligence</div>
+          <div class="ai-sub">Full project engagement through the i3d Studio Envelope — six specialist engines, two refinement gates, and final drawings delivered via SmartLock portal. Select a specific service below to begin, or explore the Envelope packages if you are ready for the full project.</div>
         </div>
-        <div class="ai-badge">i3D · AI</div>
+        <div class="ai-badge">i3D · Envelope</div>
       </div>
       <div class="fee-pills">
-        <div class="fee-pill"><div class="fp-pct">4%</div><div class="fp-lbl">Architectural Services</div></div>
-        <div class="fp-plus">+</div>
-        <div class="fee-pill"><div class="fp-pct">2%</div><div class="fp-lbl">Supervision Charges</div></div>
-        <div class="fp-plus">=</div>
-        <div class="fee-pill fp-total"><div class="fp-pct">6%</div><div class="fp-lbl">of Civil Cost · Full Engagement</div></div>
+        <div class="fee-pill"><div class="fp-pct" style="font-size:.85rem;">Starter</div><div class="fp-lbl">Brief · Climate · Landscape</div><div class="fp-lbl" style="color:var(--gold-d);margin-top:3px;">₹15,000–25,000</div></div>
+        <div class="fp-plus">·</div>
+        <div class="fee-pill fp-total"><div class="fp-pct" style="font-size:.85rem;">Standard ★</div><div class="fp-lbl">6 engines · R2 · BOQ</div><div class="fp-lbl" style="color:var(--gold-p);margin-top:3px;">₹45,000–75,000</div></div>
+        <div class="fp-plus">·</div>
+        <div class="fee-pill"><div class="fp-pct" style="font-size:.85rem;">Complete</div><div class="fp-lbl">D1 · D2 · D3 · 3D</div><div class="fp-lbl" style="color:var(--gold-d);margin-top:3px;">₹1,20,000+</div></div>
       </div>
       <hr class="ai-divider">
       <div class="ai-or">
-        <strong>Not ready for full engagement?</strong> Select specific services below — starting rates, no commitment. Many clients begin here and discover the full value of professional architectural guidance along the way.
+        <strong>Not ready for full engagement?</strong> Select specific services below — starting rates, no commitment. Many clients begin here and step into the Envelope as their project develops.
       </div>
     </div>
 
@@ -775,8 +775,10 @@ function showPage(id){
 // ══════════════════════════════════════════
 const SVCS = [
   // 3D Visualisation — flagship, shown first
-  {id:17, cat:'3D Visualisation', name:'3D Visualisation — Single View',    price:12500, desc:'Photorealistic exterior or interior view from one angle', flagship:true},
-  {id:18, cat:'3D Visualisation', name:'3D Visualisation — Additional View', price:6000,  desc:'Each additional view angle from the same project', flagship:true},
+  {id:17, cat:'3D Visualisation', name:'3D Exterior View — Single',         price:18000, desc:'Photoreal exterior · D5 Render · landscaping + context · 1 angle', flagship:true},
+  {id:18, cat:'3D Visualisation', name:'3D Interior View — Single',         price:14000, desc:'Photoreal interior · full materials, lighting and furniture · 1 room', flagship:true},
+  {id:21, cat:'3D Visualisation', name:'3D Residential Package — 5 Views', price:75000, desc:'3 exterior + 2 interior · complete set · best value · D5 + Higgsfield AI', flagship:true},
+  {id:22, cat:'3D Visualisation', name:'Cinematic Walkthrough — 30–60s',   price:55000, desc:'Higgsfield AI cinematic animation · exterior narrative · shareable video', flagship:true},
   // Plan Review
   {id:1,  cat:'Plan Review',      name:'Basic Plan Review',                  price:3500,  desc:'Quick review of existing plans with written feedback'},
   {id:2,  cat:'Plan Review',      name:'Detailed Plan Audit',                price:7500,  desc:'Comprehensive review with markups & improvement suggestions'},
@@ -844,20 +846,41 @@ function runEstimate() {
   if(!bua){showToast('Please enter the built-up area.');return;}
 
   const civil = bua*rate;
-  const feeAt4 = civil*0.04;
-  const feeAt6 = civil*0.06;
+  const tierLabel = document.getElementById('e-tier').options[document.getElementById('e-tier').selectedIndex].text.split('(')[0].trim();
 
   document.getElementById('estMetrics').innerHTML=`
     <div class="em"><div class="em-lbl">Built-up Area</div><div class="em-val">${bua.toLocaleString('en-IN')}</div><div class="em-sub">sq ft</div></div>
-    <div class="em"><div class="em-lbl">Est. Civil Cost</div><div class="em-val">₹${(civil/100000).toFixed(1)}L</div><div class="em-sub">${rate}/sqft · ${document.getElementById('e-tier').options[document.getElementById('e-tier').selectedIndex].text.split('(')[0].trim()}</div></div>
-    <div class="em"><div class="em-lbl">Full Arch. Fee (6%)</div><div class="em-val">₹${Math.round(feeAt6).toLocaleString('en-IN')}</div><div class="em-sub">Design + Supervision</div></div>`;
+    <div class="em"><div class="em-lbl">Est. Civil Cost</div><div class="em-val">₹${(civil/100000).toFixed(1)}L</div><div class="em-sub">${rate}/sqft · ${tierLabel}</div></div>
+    <div class="em"><div class="em-lbl">Cost Band ±15%</div><div class="em-val">₹${(civil*0.85/100000).toFixed(1)}–${(civil*1.15/100000).toFixed(1)}L</div><div class="em-sub">Indicative range</div></div>`;
 
   document.getElementById('estBreakdown').innerHTML=`
-    <div class="fee-row"><span class="fl">Estimated Civil Cost</span><span class="fr">₹${Math.round(civil).toLocaleString('en-IN')}</span></div>
-    <div class="fee-row"><span class="fl">Architectural Services (4%)</span><span class="fr">₹${Math.round(feeAt4).toLocaleString('en-IN')}</span></div>
-    <div class="fee-row"><span class="fl">Supervision Charges (2%)</span><span class="fr">₹${Math.round(civil*0.02).toLocaleString('en-IN')}</span></div>
-    <div class="fee-row tot"><span class="fl">Total Estimated Outlay (incl. fees)</span><span class="fr">₹${Math.round(civil+feeAt6).toLocaleString('en-IN')}</span></div>
-    <p style="font-size:.61rem;color:var(--text-m);margin-top:9px;line-height:1.7;">Indicative figures for standard residential (700–800 sqft baseline). Actual rates vary with complexity, site conditions, and scope.</p>`;
+    <div class="fee-row"><span class="fl">Structure &amp; Shell (approx 55%)</span><span class="fr">₹${Math.round(civil*0.55).toLocaleString('en-IN')}</span></div>
+    <div class="fee-row"><span class="fl">Finishes &amp; Interiors (approx 30%)</span><span class="fr">₹${Math.round(civil*0.30).toLocaleString('en-IN')}</span></div>
+    <div class="fee-row"><span class="fl">Services — MEP, Electrical (approx 15%)</span><span class="fr">₹${Math.round(civil*0.15).toLocaleString('en-IN')}</span></div>
+    <div class="fee-row tot"><span class="fl">Total Estimated Construction Cost</span><span class="fr">₹${Math.round(civil).toLocaleString('en-IN')}</span></div>
+    <p style="font-size:.61rem;color:var(--text-m);margin-top:9px;line-height:1.7;">Indicative construction cost only · ±15% depending on site, soil, and specification. Design and architectural fees are discussed through the i3d Studio Envelope.</p>
+    <div style="margin-top:16px;background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.22);border-radius:2px;padding:16px 18px;">
+      <div style="font-size:.58rem;letter-spacing:.24em;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px;">Your project is ready for the i3d Studio Envelope</div>
+      <div style="font-size:.72rem;color:var(--text-d);line-height:1.85;margin-bottom:14px;">This estimate gives you the construction cost picture. The Envelope gives you the full intelligence — design, structure, climate, MEP, landscape, and drawings — delivered through i3d Studio.</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:12px;">
+        <div onclick="showPage('consult')" style="background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold-d)'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold-d);text-transform:uppercase;margin-bottom:5px;">Starter</div>
+          <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">Design Brief · Climate · Landscape</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹15,000–25,000</div>
+        </div>
+        <div onclick="showPage('consult')" style="background:rgba(200,168,75,.05);border:1px solid rgba(200,168,75,.32);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold)'" onmouseleave="this.style.borderColor='rgba(200,168,75,.32)'">
+          <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:5px;">Standard ★</div>
+          <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">6-engine wheel · R2 · BOQ included</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹45,000–75,000</div>
+        </div>
+        <div onclick="showPage('consult')" style="background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold-d)'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold-d);text-transform:uppercase;margin-bottom:5px;">Complete</div>
+          <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">Full wheel · D1 D2 D3 · 3D visuals</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹1,20,000+</div>
+        </div>
+      </div>
+      <button class="btn btn-gold btn-full" style="font-size:.63rem;" onclick="showPage('consult')">Explore the Envelope →</button>
+    </div>`;
 
   document.getElementById('estResult').style.display='block';
 
@@ -879,9 +902,9 @@ function runEstimate() {
     </div>
     <div class="nudge-card" onclick="showPage('consult')">
       <div class="nc-icon">📐</div>
-      <div class="nc-title">Begin with a specific service</div>
-      <div class="nc-desc">Many full-project clients start with a single plan review or site visit.</div>
-      <div class="nc-cta">See all services →</div>
+      <div class="nc-title">Ready to begin the full design?</div>
+      <div class="nc-desc">The i3d Studio Envelope takes your project from brief through to final drawings — all six engines, delivered via SmartLock portal.</div>
+      <div class="nc-cta">Explore the Envelope →</div>
     </div>`;
   document.getElementById('nudgeStrip').classList.add('show');
   document.getElementById('estResult').scrollIntoView({behavior:'smooth',block:'start'});
@@ -921,7 +944,7 @@ function toggleSvc(id){
   renderGrid();
   updateSum();
   // Show scope extension if visualisation selected and plan review not selected
-  const hasViz = sel.has(17)||sel.has(18);
+  const hasViz = sel.has(17)||sel.has(18)||sel.has(21)||sel.has(22);
   const hasPlan = sel.has(1)||sel.has(2);
   const ext = document.getElementById('scopeExt');
   if(hasViz && !hasPlan) ext.classList.add('show');
