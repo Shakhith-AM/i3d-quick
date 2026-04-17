@@ -4,34 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>i3D Studio — Architectural Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0f0b;--card:#181c0f;--card2:#1d2213;--card3:#202616;
-  --border:#252c14;--border-s:#1c2210;
+  --bg:#0a1628;--card:#0f1f3a;--card2:#132845;--card3:#16304f;
+  --border:#1e3a5f;--border-s:#162d4a;
   --gold:#c8a84b;--gold-d:#896e2f;--gold-p:#e4d29a;
-  --text:#cdc8ba;--text-d:#737060;--text-m:#42403a;
-  --white:#eae5db;--green:#3a6630;--green-b:#4e8a44;
+  --text:#b8c4d4;--text-d:#5a7090;--text-m:#3a506e;
+  --white:#e8edf2;--green:#3a6630;--green-b:#4e8a44;
   --amber:#c97f0a;--red:#a82c2c;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Josefin Sans',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(200,168,75,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,.018) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;min-height:100vh;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(200,168,75,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,.012) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0;}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:100;background:rgba(13,15,11,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:62px;}
+header{position:sticky;top:0;z-index:100;background:rgba(10,22,40,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:62px;}
 .logo{display:flex;align-items:baseline;gap:13px;}
-.logo-mark{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.85rem;color:var(--gold);letter-spacing:-1px;line-height:1;}
+.logo-mark{font-family:'Cinzel',serif;font-size:1.85rem;color:var(--gold);letter-spacing:-1px;line-height:1;}
 .logo-divider{width:1px;height:28px;background:var(--border);margin:0 2px;}
 .logo-text{display:flex;flex-direction:column;gap:1px;}
 .logo-name{font-size:.57rem;letter-spacing:.36em;color:var(--text-d);text-transform:uppercase;}
-.logo-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.72rem;color:var(--gold-d);}
+.logo-tag{font-family:'Inter',sans-serif;font-style:italic;font-size:.72rem;color:var(--gold-d);}
 .hdr-right{text-align:right;font-size:.67rem;color:var(--text-d);line-height:1.75;}
 .hdr-right strong{color:var(--white);font-size:.76rem;display:block;}
 
 /* NAV */
-nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;display:flex;position:sticky;top:62px;z-index:99;overflow-x:auto;}
+nav{background:#081325;border-bottom:1px solid var(--border);padding:0 40px;display:flex;position:sticky;top:62px;z-index:99;overflow-x:auto;}
 .tab{padding:15px 22px;font-size:.67rem;letter-spacing:.2em;color:var(--text-d);cursor:pointer;border-bottom:2px solid transparent;transition:all .22s;text-transform:uppercase;white-space:nowrap;user-select:none;display:flex;align-items:center;gap:7px;}
 .tab:hover{color:var(--text);}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
@@ -44,7 +44,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 
 /* HEADINGS */
 .ph{margin-bottom:36px;}
-.ph h1{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:10px;}
+.ph h1{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:10px;}
 .ph h1 em{font-style:italic;color:var(--gold);}
 .ph p{font-size:.78rem;color:var(--text-d);line-height:1.9;max-width:560px;}
 
@@ -62,28 +62,28 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .frow:last-child{margin-bottom:0;}
 .field{display:flex;flex-direction:column;gap:6px;}
 .field label{font-size:.59rem;letter-spacing:.2em;color:var(--text-d);text-transform:uppercase;}
-.field input,.field select,.field textarea{background:rgba(0,0,0,.28);border:1px solid var(--border);color:var(--white);padding:10px 13px;font-family:'Josefin Sans',sans-serif;font-size:.78rem;font-weight:300;outline:none;border-radius:1px;transition:border-color .2s;width:100%;-webkit-appearance:none;}
+.field input,.field select,.field textarea{background:rgba(0,0,0,.28);border:1px solid var(--border);color:var(--white);padding:10px 13px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:400;outline:none;border-radius:1px;transition:border-color .2s;width:100%;-webkit-appearance:none;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-d);}
 .field input::placeholder,.field textarea::placeholder{color:var(--text-m);}
-.field select option{background:#181c0f;}
+.field select option{background:#0f1f3a;}
 .field textarea{resize:vertical;min-height:86px;line-height:1.7;}
 
 /* ── ESTIMATOR ── */
 .est-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:18px;}
 .em{background:var(--card);padding:18px;text-align:center;}
 .em-lbl{font-size:.56rem;letter-spacing:.2em;color:var(--text-d);text-transform:uppercase;margin-bottom:5px;}
-.em-val{font-family:'DM Mono',monospace;font-size:1.5rem;color:var(--gold);}
+.em-val{font-family:'JetBrains Mono',monospace;font-size:1.5rem;color:var(--gold);}
 .em-sub{font-size:.56rem;color:var(--text-m);margin-top:3px;}
 
 .fee-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border-s);font-size:.74rem;}
 .fee-row:last-child{border-bottom:none;}
 .fee-row .fl{color:var(--text-d);}
-.fee-row .fr{font-family:'DM Mono',monospace;color:var(--white);}
+.fee-row .fr{font-family:'JetBrains Mono',monospace;color:var(--white);}
 .fee-row.tot .fl{color:var(--gold);font-weight:600;font-size:.78rem;}
 .fee-row.tot .fr{color:var(--gold);font-size:.95rem;}
 
 /* NUDGE CARD — appears after estimate */
-.nudge-strip{display:none;background:linear-gradient(135deg,#111a09,#1a2710);border:1px solid rgba(200,168,75,.22);border-radius:2px;padding:20px 24px;margin-top:16px;}
+.nudge-strip{display:none;background:linear-gradient(135deg,#0c1a30,#112240);border:1px solid rgba(200,168,75,.22);border-radius:2px;padding:20px 24px;margin-top:16px;}
 .nudge-strip.show{display:block;animation:fadeUp .4s ease both;}
 .nudge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
 .nudge-card{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:1px;padding:14px;cursor:pointer;transition:all .22s;}
@@ -98,25 +98,25 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .pro-card{background:var(--card2);border:1px solid var(--border);border-radius:2px;padding:22px;text-align:center;position:relative;overflow:hidden;}
 .pro-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);}
 .pro-lock{font-size:1.9rem;margin-bottom:10px;}
-.pro-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--white);margin-bottom:7px;}
+.pro-title{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--white);margin-bottom:7px;}
 .pro-desc{font-size:.66rem;color:var(--text-d);line-height:1.6;margin-bottom:12px;}
-.pro-price{font-family:'DM Mono',monospace;font-size:1.15rem;color:var(--gold);margin-bottom:3px;}
+.pro-price{font-family:'JetBrains Mono',monospace;font-size:1.15rem;color:var(--gold);margin-bottom:3px;}
 .pro-note{font-size:.56rem;color:var(--text-m);margin-bottom:12px;letter-spacing:.1em;}
-.pro-btn{width:100%;padding:9px;background:var(--gold);color:#000;font-family:'Josefin Sans',sans-serif;font-size:.63rem;letter-spacing:.22em;font-weight:600;text-transform:uppercase;border:none;cursor:pointer;border-radius:1px;transition:all .2s;}
+.pro-btn{width:100%;padding:9px;background:var(--gold);color:#000;font-family:'Inter',sans-serif;font-size:.63rem;letter-spacing:.22em;font-weight:600;text-transform:uppercase;border:none;cursor:pointer;border-radius:1px;transition:all .2s;}
 .pro-btn:hover{background:var(--gold-p);}
 
 /* ── CONSULT ── */
 /* AI intro banner */
-.ai-banner{background:linear-gradient(135deg,#0e1a09,#192610);border:1px solid rgba(200,168,75,.2);border-radius:2px;padding:24px 28px;margin-bottom:22px;}
+.ai-banner{background:linear-gradient(135deg,#0c1a30,#112240);border:1px solid rgba(200,168,75,.2);border-radius:2px;padding:24px 28px;margin-bottom:22px;}
 .ai-banner-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px;}
-.ai-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:5px;}
+.ai-title{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:5px;}
 .ai-sub{font-size:.7rem;color:var(--text-d);line-height:1.8;}
 .ai-badge{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.3);color:var(--gold);font-size:.58rem;letter-spacing:.2em;padding:5px 12px;border-radius:1px;text-transform:uppercase;white-space:nowrap;}
 .fee-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
 .fee-pill{background:rgba(0,0,0,.25);border:1px solid var(--border);padding:8px 14px;border-radius:1px;text-align:center;}
-.fp-pct{font-family:'DM Mono',monospace;font-size:1.1rem;color:var(--gold);line-height:1;}
+.fp-pct{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--gold);line-height:1;}
 .fp-lbl{font-size:.58rem;color:var(--text-d);margin-top:3px;letter-spacing:.08em;}
-.fp-plus{font-family:'DM Mono',monospace;font-size:1.1rem;color:var(--text-m);padding:8px 4px;align-self:center;}
+.fp-plus{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--text-m);padding:8px 4px;align-self:center;}
 .fp-total{background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.2);}
 .fp-total .fp-pct{color:var(--gold-p);}
 .ai-divider{border:none;border-top:1px solid var(--border-s);margin:16px 0;}
@@ -131,7 +131,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 
 /* CAT FILTER */
 .cat-filter{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px;}
-.cat-btn{padding:5px 12px;border:1px solid var(--border);background:transparent;color:var(--text-d);font-family:'Josefin Sans',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:1px;transition:all .18s;}
+.cat-btn{padding:5px 12px;border:1px solid var(--border);background:transparent;color:var(--text-d);font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:1px;transition:all .18s;}
 .cat-btn:hover{color:var(--text);border-color:var(--text-m);}
 .cat-btn.active{background:var(--gold);border-color:var(--gold);color:#000;}
 .cat-btn.viz{border-color:rgba(200,168,75,.4);color:var(--gold-d);}
@@ -147,7 +147,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .svc-cat{font-size:.52rem;letter-spacing:.25em;color:var(--gold-d);text-transform:uppercase;margin-bottom:4px;}
 .svc-cat.viz-cat{color:#7a9e6a;}
 .svc-name{font-size:.78rem;color:var(--white);line-height:1.3;margin-bottom:5px;}
-.svc-price{font-family:'DM Mono',monospace;font-size:.88rem;color:var(--gold);}
+.svc-price{font-family:'JetBrains Mono',monospace;font-size:.88rem;color:var(--gold);}
 .svc-desc{font-size:.62rem;color:var(--text-d);margin-top:4px;line-height:1.5;}
 .svc-tick{position:absolute;top:9px;right:9px;width:15px;height:15px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.52rem;color:transparent;transition:all .18s;}
 .svc-card.sel .svc-tick{background:var(--gold);border-color:var(--gold);color:#000;}
@@ -158,7 +158,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .sum-bar.hidden{display:none;}
 .sb-l{font-size:.7rem;color:var(--text-d);}
 .sb-l strong{color:var(--white);}
-.sb-r{font-family:'DM Mono',monospace;font-size:.92rem;color:var(--gold);}
+.sb-r{font-family:'JetBrains Mono',monospace;font-size:.92rem;color:var(--gold);}
 .sb-note{font-size:.59rem;color:var(--text-m);width:100%;}
 
 /* UPLOAD */
@@ -170,12 +170,12 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .file-list{margin-top:9px;display:flex;flex-direction:column;gap:5px;}
 .file-item{display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.2);border:1px solid var(--border-s);padding:7px 11px;font-size:.68rem;}
 .fi-name{color:var(--text);}
-.fi-size{color:var(--text-m);font-family:'DM Mono',monospace;font-size:.61rem;}
+.fi-size{color:var(--text-m);font-family:'JetBrains Mono',monospace;font-size:.61rem;}
 .fi-rm{cursor:pointer;color:var(--text-m);margin-left:9px;transition:color .18s;}
 .fi-rm:hover{color:var(--red);}
 
 /* BUTTONS */
-.btn{padding:11px 22px;font-family:'Josefin Sans',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s;border-radius:1px;}
+.btn{padding:11px 22px;font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s;border-radius:1px;}
 .btn-gold{background:var(--gold);color:#000;font-weight:600;}
 .btn-gold:hover{background:var(--gold-p);}
 .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text-d);}
@@ -188,7 +188,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 /* PAYMENT */
 .pay-hdr{text-align:center;padding:30px 26px 22px;border-bottom:1px solid var(--border-s);}
 .pay-hdr .phi{font-size:1.8rem;margin-bottom:8px;}
-.pay-hdr h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:6px;}
+.pay-hdr h2{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:6px;}
 .pay-hdr p{font-size:.71rem;color:var(--text-d);line-height:1.8;}
 .pay-body{padding:24px 28px;}
 .pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:20px;}
@@ -196,12 +196,12 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .pc-lbl{font-size:.55rem;letter-spacing:.24em;color:var(--text-d);text-transform:uppercase;margin-bottom:11px;}
 .qr-wrap{width:118px;height:118px;background:#fff;border-radius:2px;margin:0 auto 10px;padding:7px;display:flex;align-items:center;justify-content:center;}
 .qr-wrap img{width:100%;height:100%;object-fit:contain;}
-.upi-id{font-family:'DM Mono',monospace;font-size:.64rem;color:var(--gold);margin-bottom:3px;}
+.upi-id{font-family:'JetBrains Mono',monospace;font-size:.64rem;color:var(--gold);margin-bottom:3px;}
 .bank-nm{font-size:.59rem;color:var(--text-m);}
 .upi-d{display:flex;flex-direction:column;align-items:center;gap:9px;}
-.upi-amt{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1;}
+.upi-amt{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);line-height:1;}
 .upi-amt-l{font-size:.57rem;color:var(--text-m);letter-spacing:.18em;text-transform:uppercase;}
-.upi-copy{background:transparent;border:1px solid var(--border);color:var(--text-d);font-family:'DM Mono',monospace;font-size:.62rem;padding:7px 11px;cursor:pointer;border-radius:1px;transition:all .18s;display:flex;align-items:center;gap:5px;}
+.upi-copy{background:transparent;border:1px solid var(--border);color:var(--text-d);font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:7px 11px;cursor:pointer;border-radius:1px;transition:all .18s;display:flex;align-items:center;gap:5px;}
 .upi-copy:hover{border-color:var(--gold-d);color:var(--gold);}
 .step-back{text-align:center;margin-top:13px;font-size:.62rem;color:var(--text-m);cursor:pointer;letter-spacing:.1em;transition:color .18s;}
 .step-back:hover{color:var(--text-d);}
@@ -209,22 +209,22 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 /* THANK YOU */
 .ty{text-align:center;padding:50px 26px;}
 .ty-i{font-size:2.6rem;margin-bottom:16px;}
-.ty h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--white);margin-bottom:10px;}
+.ty h2{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:300;color:var(--white);margin-bottom:10px;}
 .ty p{font-size:.74rem;color:var(--text-d);line-height:1.9;max-width:400px;margin:0 auto 22px;}
-.ty-ref{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--gold);background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.18);padding:8px 17px;display:inline-block;border-radius:1px;margin-bottom:22px;letter-spacing:.1em;}
+.ty-ref{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--gold);background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.18);padding:8px 17px;display:inline-block;border-radius:1px;margin-bottom:22px;letter-spacing:.1em;}
 
 /* LIBRARY */
 .lib-pro-banner{background:linear-gradient(135deg,#0f1a0a,#1b2a0e);border:1px solid rgba(200,168,75,.22);border-radius:2px;padding:26px 30px;margin-bottom:26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;}
-.lpb-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:6px;}
+.lpb-title{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:6px;}
 .lpb-desc{font-size:.7rem;color:var(--text-d);line-height:1.8;}
 .lpb-desc strong{color:var(--gold);}
 .lpb-r{text-align:center;min-width:140px;}
-.lpb-price{font-family:'DM Mono',monospace;font-size:1.55rem;color:var(--gold);line-height:1;}
+.lpb-price{font-family:'JetBrains Mono',monospace;font-size:1.55rem;color:var(--gold);line-height:1;}
 .lpb-note{font-size:.57rem;color:var(--text-m);margin:4px 0 12px;letter-spacing:.1em;}
 
 .lib-sec{margin-bottom:30px;}
-.lib-sec-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--white);border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.lib-sec-title span{font-size:.56rem;letter-spacing:.22em;color:var(--text-d);text-transform:uppercase;font-family:'Josefin Sans',sans-serif;}
+.lib-sec-title{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:300;color:var(--white);border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.lib-sec-title span{font-size:.56rem;letter-spacing:.22em;color:var(--text-d);text-transform:uppercase;font-family:'Inter',sans-serif;}
 .lib-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:13px;}
 .lib-card{background:var(--card);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:all .22s;}
 .lib-card:hover{border-color:var(--gold-d);}
@@ -235,7 +235,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .lib-desc{font-size:.66rem;color:var(--text-d);line-height:1.55;}
 .lib-footer{padding:10px 15px;border-top:1px solid var(--border-s);display:flex;align-items:center;justify-content:space-between;}
 .badge-free{font-size:.55rem;letter-spacing:.14em;color:var(--green-b);background:rgba(78,138,68,.1);padding:3px 7px;border-radius:1px;text-transform:uppercase;}
-.lib-exp-btn{font-size:.58rem;letter-spacing:.1em;color:var(--gold-d);cursor:pointer;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);background:transparent;font-family:'Josefin Sans',sans-serif;transition:all .18s;border-radius:1px;}
+.lib-exp-btn{font-size:.58rem;letter-spacing:.1em;color:var(--gold-d);cursor:pointer;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);background:transparent;font-family:'Inter',sans-serif;transition:all .18s;border-radius:1px;}
 .lib-exp-btn:hover{border-color:var(--gold-d);color:var(--gold);}
 .lib-detail{display:none;background:var(--card2);border-top:1px solid var(--border);padding:13px 15px;}
 .lib-detail.open{display:block;}
@@ -258,7 +258,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .modal{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:28px;max-width:440px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
 .modal-x{position:absolute;top:13px;right:15px;cursor:pointer;color:var(--text-d);font-size:1.1rem;transition:color .18s;}
 .modal-x:hover{color:var(--white);}
-.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:4px;}
+.modal-title{font-family:'Cinzel',serif;font-size:1.35rem;font-weight:300;color:var(--white);margin-bottom:4px;}
 .modal-sub{font-size:.7rem;color:var(--text-d);margin-bottom:20px;line-height:1.7;}
 
 /* TOAST */
@@ -266,7 +266,7 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
 .toast.show{transform:translateY(0);opacity:1;}
 
 /* SCOPE EXT TEMPLATE */
-.wa-tmpl{background:rgba(0,0,0,.28);border:1px solid var(--border-s);border-radius:1px;padding:14px;font-size:.7rem;font-family:'DM Mono',monospace;color:var(--text-d);line-height:1.8;white-space:pre-wrap;margin-top:12px;}
+.wa-tmpl{background:rgba(0,0,0,.28);border:1px solid var(--border-s);border-radius:1px;padding:14px;font-size:.7rem;font-family:'JetBrains Mono',monospace;color:var(--text-d);line-height:1.8;white-space:pre-wrap;margin-top:12px;}
 
 /* RESPONSIVE */
 @media(max-width:720px){
@@ -281,6 +281,46 @@ nav{background:#0a0c08;border-bottom:1px solid var(--border);padding:0 40px;disp
   .ai-banner-top{flex-direction:column;}
 }
 @media print{header,nav,.pro-grid,.btn-row,.cat-filter,.nudge-strip{display:none!important;}}
+
+/* ══════════ ARIA CHAT ══════════ */
+.aria-fab{position:fixed;bottom:1.5rem;right:1.5rem;display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--border);border-radius:9999px;padding:.75rem 1rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:border-color .2s;}
+.aria-fab:hover{border-color:rgba(200,168,75,.5);}
+.aria-panel{position:fixed;bottom:1.5rem;right:1.5rem;width:380px;max-height:520px;z-index:200;display:none;flex-direction:column;border-radius:.5rem;box-shadow:0 8px 40px rgba(0,0,0,.5);background:linear-gradient(135deg,rgba(16,27,44,.95),rgba(12,20,34,.98));border:1px solid var(--border);backdrop-filter:blur(14px);}
+.aria-panel.show{display:flex;}
+.aria-messages{flex:1;overflow-y:auto;padding:1rem;max-height:300px;}
+.aria-messages .msg{font-size:.85rem;margin-bottom:.75rem;line-height:1.6;}
+.msg-aria{background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:.75rem;color:var(--text);}
+.msg-user{text-align:right;}
+.msg-user span{display:inline-block;background:rgba(200,168,75,.15);color:var(--gold);border-radius:.5rem;padding:.5rem .75rem;}
+.aria-input-row{padding:.75rem;border-top:1px solid var(--border);display:flex;gap:.5rem;}
+.aria-input-row input{flex:1;background:rgba(0,0,0,.25);border:1px solid var(--border);color:var(--text);padding:.5rem .75rem;border-radius:.375rem;font-size:.85rem;font-family:'Inter',sans-serif;}
+.aria-input-row input::placeholder{color:var(--text-m);}
+.aria-quick{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .5rem;}
+.aria-quick button{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:.25rem .6rem;border:1px solid var(--border);border-radius:.25rem;background:transparent;color:var(--text-d);cursor:pointer;transition:all .18s;}
+.aria-quick button:hover{border-color:var(--gold);color:var(--gold);}
+.aria-ctrl-btn{background:none;border:1px solid var(--border);color:var(--text-d);padding:.35rem .5rem;border-radius:.375rem;cursor:pointer;font-size:.75rem;transition:all .18s;}
+.aria-ctrl-btn:hover{border-color:var(--gold);color:var(--gold);}
+@media(max-width:500px){.aria-panel{width:calc(100vw - 2rem);right:1rem;bottom:1rem;max-height:70vh;}}
+
+/* ══════════ SCHEDULE SECTION ══════════ */
+.sched-card{margin-top:8px;}
+.sched-tabs{display:flex;gap:0;margin-bottom:14px;}
+.sched-tab{flex:1;text-align:center;padding:9px 0;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.04em;cursor:pointer;border:1px dashed var(--border-s);color:var(--text-d);transition:all .2s;background:transparent;}
+.sched-tab:first-child{border-radius:6px 0 0 6px;}
+.sched-tab:last-child{border-radius:0 6px 6px 0;}
+.sched-tab.active{background:var(--card);color:var(--gold);border-color:var(--gold-d);}
+.sched-block{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:8px 10px;background:rgba(0,0,0,.15);border:1px solid var(--border-s);border-radius:6px;}
+.sched-block input,.sched-block select{background:rgba(0,0,0,.2);border:1px solid var(--border-s);color:var(--text);padding:5px 8px;border-radius:4px;font-size:.72rem;font-family:'Inter',sans-serif;}
+.sched-block input[type="time"]{width:90px;}
+.sched-block input[type="text"]{flex:1;min-width:80px;}
+.sched-rm{background:none;border:none;color:var(--text-m);cursor:pointer;font-size:1rem;padding:2px 6px;transition:color .15s;}
+.sched-rm:hover{color:#ef4444;}
+.sched-add{display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border:1px dashed var(--border-s);border-radius:6px;color:var(--text-d);font-size:.72rem;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .18s;background:transparent;}
+.sched-add:hover{border-color:var(--gold-d);color:var(--gold);}
+.sched-day-sel{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
+.sched-day-btn{padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:.62rem;border:1px solid var(--border-s);border-radius:4px;background:transparent;color:var(--text-d);cursor:pointer;transition:all .18s;}
+.sched-day-btn.active{background:var(--card);color:var(--gold);border-color:var(--gold-d);}
+.sched-hint{font-size:.62rem;color:var(--text-m);font-style:italic;margin-bottom:12px;line-height:1.6;}
 </style>
 
 <script>
@@ -392,7 +432,7 @@ function showPage(id){
   <!-- NUDGE STRIP — contextual, appears after estimate -->
   <div class="nudge-strip" id="nudgeStrip">
     <div style="font-size:.58rem;letter-spacing:.3em;color:var(--gold-d);text-transform:uppercase;margin-bottom:4px;">Did you know?</div>
-    <div style="font-size:.8rem;color:var(--white);font-family:'Cormorant Garamond',serif;font-weight:300;" id="nudgeHeading"></div>
+    <div style="font-size:.8rem;color:var(--white);font-family:'Cinzel',serif;font-weight:300;" id="nudgeHeading"></div>
     <div class="nudge-grid" id="nudgeGrid"></div>
   </div>
 
@@ -553,6 +593,25 @@ function showPage(id){
       <div class="file-list" id="c-fl"></div>
     </div>
 
+    <!-- ARCHITECT SCHEDULE — ARIA AVAILABILITY -->
+    <div class="card sched-card">
+      <div class="card-lbl">📅 Architect Schedule — Aria Availability</div>
+      <div class="sched-hint">Set your daily schedule so Aria can inform clients about your availability in real-time.</div>
+      <div class="sched-tabs">
+        <div class="sched-tab active" onclick="switchSchedTab('today')">🕐 Today's Schedule</div>
+        <div class="sched-tab" onclick="switchSchedTab('weekly')">📆 Weekly Planner</div>
+      </div>
+      <div id="sched-today">
+        <div id="sched-today-blocks"></div>
+        <div class="sched-add" onclick="addSchedBlock('today')">+ Add Time Block</div>
+      </div>
+      <div id="sched-weekly" style="display:none;">
+        <div class="sched-day-sel" id="sched-day-sel"></div>
+        <div id="sched-weekly-blocks"></div>
+        <div class="sched-add" onclick="addSchedBlock('weekly')">+ Add Time Block</div>
+      </div>
+    </div>
+
     <button class="btn btn-gold btn-full" onclick="submitConsult()">Submit Consultation Request</button>
     <p style="text-align:center;font-size:.62rem;color:var(--text-m);margin-top:11px;line-height:1.7;">Our team will review and respond within 24–48 hours with a fee proposal.</p>
 
@@ -578,7 +637,7 @@ function showPage(id){
         <div class="pay-methods">
           <div class="pay-card">
             <div class="pc-lbl">Scan &amp; Pay — UPI</div>
-            <div class="qr-wrap"><img id="c-qr" src="" alt="QR" onerror="this.parentElement.innerHTML='<div style=\'font-size:.58rem;color:#666;padding:8px;line-height:1.6;\'>QR loads<br>online</div>'"></div>
+            <div class="qr-wrap"><img id="c-qr" src="i3d-payment-qr.png" alt="UPI QR Code — Interactive 3 Dimensions"></div>
             <div class="upi-id">interactive.dimensions0007@uboi</div>
             <div class="bank-nm">Union Bank of India</div>
           </div>
@@ -754,7 +813,7 @@ function showPage(id){
     <div class="modal-sub" id="m-sub">Pay via UPI and send screenshot on WhatsApp for instant access.</div>
     <div style="text-align:center;">
       <div class="qr-wrap" id="m-qr-wrap" style="width:136px;height:136px;margin:0 auto 11px;">
-        <img id="m-qr" src="" alt="UPI QR">
+        <img id="m-qr" src="i3d-payment-qr.png" alt="UPI QR Code — Interactive 3 Dimensions">
       </div>
       <div class="upi-id">interactive.dimensions0007@uboi</div>
       <div class="bank-nm" style="margin-bottom:5px;">Union Bank of India — i3D Studio</div>
@@ -866,17 +925,17 @@ function runEstimate() {
         <div onclick="showPage('consult')" style="background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold-d)'" onmouseleave="this.style.borderColor='var(--border)'">
           <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold-d);text-transform:uppercase;margin-bottom:5px;">Starter</div>
           <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">Design Brief · Climate · Landscape</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹15,000–25,000</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--gold);">₹15,000–25,000</div>
         </div>
         <div onclick="showPage('consult')" style="background:rgba(200,168,75,.05);border:1px solid rgba(200,168,75,.32);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold)'" onmouseleave="this.style.borderColor='rgba(200,168,75,.32)'">
           <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:5px;">Standard ★</div>
           <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">6-engine wheel · R2 · BOQ included</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹45,000–75,000</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--gold);">₹45,000–75,000</div>
         </div>
         <div onclick="showPage('consult')" style="background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:1px;padding:12px;cursor:pointer;transition:all .2s;" onmouseenter="this.style.borderColor='var(--gold-d)'" onmouseleave="this.style.borderColor='var(--border)'">
           <div style="font-size:.58rem;letter-spacing:.16em;color:var(--gold-d);text-transform:uppercase;margin-bottom:5px;">Complete</div>
           <div style="font-size:.7rem;color:var(--white);line-height:1.5;margin-bottom:6px;">Full wheel · D1 D2 D3 · 3D visuals</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--gold);">₹1,20,000+</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--gold);">₹1,20,000+</div>
         </div>
       </div>
       <button class="btn btn-gold btn-full" style="font-size:.63rem;" onclick="showPage('consult')">Explore the Envelope →</button>
@@ -1161,6 +1220,309 @@ function showToast(msg){
 
 // INIT
 renderGrid();
+
+// ══════════════════════════════════════════
+//  ARCHITECT SCHEDULE
+// ══════════════════════════════════════════
+var SCHED_KEY='i3d-architect-schedule';
+var schedData={todaySchedule:[],weeklySchedule:{Monday:[],Tuesday:[],Wednesday:[],Thursday:[],Friday:[],Saturday:[],Sunday:[]}};
+var schedTab='today';
+var schedDay='Monday';
+var SCHED_DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+(function loadSched(){
+  try{var s=localStorage.getItem(SCHED_KEY);if(s){var d=JSON.parse(s);schedData.todaySchedule=d.todaySchedule||[];schedData.weeklySchedule=d.weeklySchedule||schedData.weeklySchedule;}}catch(e){}
+})();
+
+function saveSched(){
+  localStorage.setItem(SCHED_KEY,JSON.stringify(schedData));
+  syncSchedToAria();
+}
+
+function syncSchedToAria(){
+  if(typeof ARIA_PROJECT_CTX!=='undefined'){
+    ARIA_PROJECT_CTX.todaySchedule=schedData.todaySchedule;
+    ARIA_PROJECT_CTX.weeklySchedule=schedData.weeklySchedule;
+  }
+}
+
+function switchSchedTab(tab){
+  schedTab=tab;
+  document.querySelectorAll('.sched-tab').forEach(function(t,i){t.classList.toggle('active',i===(tab==='today'?0:1));});
+  document.getElementById('sched-today').style.display=tab==='today'?'block':'none';
+  document.getElementById('sched-weekly').style.display=tab==='weekly'?'block':'none';
+  renderSched();
+}
+
+function renderSched(){
+  if(schedTab==='today'){renderTodayBlocks();}
+  else{renderDaySel();renderWeeklyBlocks();}
+}
+
+function renderTodayBlocks(){
+  var c=document.getElementById('sched-today-blocks');
+  c.innerHTML='';
+  schedData.todaySchedule.forEach(function(b,i){
+    c.innerHTML+='<div class="sched-block"><input type="time" value="'+b.startTime+'" onchange="updSched(\'today\','+i+',\'startTime\',this.value)"><span style="color:var(--text-m);font-size:.7rem;">to</span><input type="time" value="'+b.endTime+'" onchange="updSched(\'today\','+i+',\'endTime\',this.value)"><input type="text" value="'+b.activity+'" placeholder="Activity (e.g. Site Visit)" onchange="updSched(\'today\','+i+',\'activity\',this.value)"><button class="sched-rm" onclick="rmSched(\'today\','+i+')">✕</button></div>';
+  });
+}
+
+function renderDaySel(){
+  var c=document.getElementById('sched-day-sel');
+  c.innerHTML='';
+  SCHED_DAYS.forEach(function(d){
+    var cnt=(schedData.weeklySchedule[d]||[]).length;
+    c.innerHTML+='<button class="sched-day-btn'+(d===schedDay?' active':'')+'" onclick="selSchedDay(\''+d+'\')">'+d.slice(0,3)+(cnt?' ('+cnt+')':'')+'</button>';
+  });
+}
+
+function renderWeeklyBlocks(){
+  var c=document.getElementById('sched-weekly-blocks');
+  c.innerHTML='';
+  var blocks=schedData.weeklySchedule[schedDay]||[];
+  if(blocks.length===0){c.innerHTML='<div style="text-align:center;padding:12px;color:var(--text-m);font-size:.7rem;">No blocks set for '+schedDay+' — architect available all day</div>';}
+  blocks.forEach(function(b,i){
+    c.innerHTML+='<div class="sched-block"><input type="time" value="'+b.startTime+'" onchange="updSched(\'weekly\','+i+',\'startTime\',this.value)"><span style="color:var(--text-m);font-size:.7rem;">to</span><input type="time" value="'+b.endTime+'" onchange="updSched(\'weekly\','+i+',\'endTime\',this.value)"><input type="text" value="'+b.activity+'" placeholder="Activity" onchange="updSched(\'weekly\','+i+',\'activity\',this.value)"><button class="sched-rm" onclick="rmSched(\'weekly\','+i+')">✕</button></div>';
+  });
+}
+
+function selSchedDay(d){schedDay=d;renderDaySel();renderWeeklyBlocks();}
+
+function addSchedBlock(tab){
+  var block={startTime:'09:00',endTime:'11:00',activity:''};
+  if(tab==='today'){schedData.todaySchedule.push(block);}
+  else{if(!schedData.weeklySchedule[schedDay])schedData.weeklySchedule[schedDay]=[];schedData.weeklySchedule[schedDay].push(block);}
+  saveSched();renderSched();
+}
+
+function updSched(tab,idx,field,val){
+  if(tab==='today'){schedData.todaySchedule[idx][field]=val;}
+  else{schedData.weeklySchedule[schedDay][idx][field]=val;}
+  saveSched();
+}
+
+function rmSched(tab,idx){
+  if(tab==='today'){schedData.todaySchedule.splice(idx,1);}
+  else{schedData.weeklySchedule[schedDay].splice(idx,1);}
+  saveSched();renderSched();
+}
+
+// Initial render + sync
+renderSched();
+syncSchedToAria();
+
+
+// ══════════════════════════════════════════
+//  ARIA — Voice AI Assistant
+// ══════════════════════════════════════════
+var ARIA_CHAT_URL='https://ffhiooilcipmojxzpnfw.supabase.co/functions/v1/aria-chat';
+var ARIA_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmaGlvb2lsY2lwbW9qeHpwbmZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNDMyMzUsImV4cCI6MjA5MDYxOTIzNX0.hyKvwJAtnhBQagpOZADZGjZ8CYhlrOKqnNoRfnc6bVw';
+var ariaChatHistory=[];
+var ariaOpen=false;
+var ariaLoading=false;
+var ariaPaused=false;
+
+var ARIA_PROJECT_CTX={
+  firmName:'i3D Studio',
+  tagline:'Architectural Intelligence · Est. 1999 · Coimbatore',
+  website:'i3dstudio.in',
+  assistantName:'Aria',
+  projectTitle:'i3D Architectural Services',
+  referenceNumber:'I3D/2026',
+  location:'Coimbatore',
+  stage:'Active',
+  year:'2026',
+  description:'Quick estimation, consultation booking, and architectural knowledge library',
+  deliverableTypes:['Quick Estimation','Consultation','Knowledge Library'],
+  greetingStyle:'Warm & Professional',
+  pricingTiers:[],
+  deliverableFiles:[],
+  todaySchedule:[],
+  weeklySchedule:{Monday:[],Tuesday:[],Wednesday:[],Thursday:[],Friday:[],Saturday:[],Sunday:[]},
+  briefScope:'Architecture design, planning, estimation services',
+  designApproach:'Modern architectural practice with 25+ years of expertise',
+  deliverableNotes:'',
+  firmNote:''
+};
+// Sync saved schedule into Aria context
+syncSchedToAria();
+
+function toggleAria(){
+  ariaOpen=!ariaOpen;
+  document.getElementById('aria-panel').classList.toggle('show',ariaOpen);
+  document.getElementById('aria-fab').style.display=ariaOpen?'none':'flex';
+}
+
+function addAriaMsg(role,text){
+  var el=document.getElementById('aria-messages');
+  var div=document.createElement('div');
+  div.className='msg';
+  if(role==='user'){
+    div.className+=' msg-user';
+    div.innerHTML='<span>'+text.replace(/</g,'&lt;')+'</span>';
+  } else {
+    div.className+=' msg-aria';
+    div.textContent=text;
+  }
+  el.appendChild(div);
+  el.scrollTop=el.scrollHeight;
+  return div;
+}
+
+// Voice TTS — with reliable async female voice loading
+var _cachedFemaleVoice=null, _cachedMaleVoice=null;
+
+function _loadVoices(){
+  var voices=speechSynthesis.getVoices();
+  if(!voices.length)return;
+  // Female priority list — covers Chrome/Edge/Safari/Windows/Mac/Android
+  var femPref=['Microsoft Zira','Microsoft Aria Online','Microsoft Aria','Google UK English Female',
+    'Samantha','Victoria','Karen','Moira','Tessa','Fiona','Google US English',
+    'Microsoft Hazel Online','Microsoft Susan Online'];
+  _cachedFemaleVoice=null;
+  for(var i=0;i<femPref.length;i++){
+    var v=voices.find(function(v){return v.name.indexOf(femPref[i])===0||v.name===femPref[i];});
+    if(v){_cachedFemaleVoice=v;break;}
+  }
+  if(!_cachedFemaleVoice){
+    _cachedFemaleVoice=voices.find(function(v){
+      return v.lang.indexOf('en')===0&&['female','woman','zira','hazel','susan','samantha','karen','aria','moira'].some(function(k){return v.name.toLowerCase().indexOf(k)>=0;});
+    })||voices.find(function(v){return v.lang.indexOf('en')===0;})||null;
+  }
+  // Male fallback
+  var malPref=['Google UK English Male','Microsoft David','Microsoft James'];
+  for(var j=0;j<malPref.length;j++){
+    var mv=voices.find(function(v){return v.name===malPref[j];});
+    if(mv){_cachedMaleVoice=mv;break;}
+  }
+  if(!_cachedMaleVoice){
+    _cachedMaleVoice=voices.find(function(v){
+      return v.lang.indexOf('en')===0&&['male','man','david','james','daniel'].some(function(k){return v.name.toLowerCase().indexOf(k)>=0;});
+    })||null;
+  }
+}
+
+if(typeof speechSynthesis!=='undefined'){
+  _loadVoices();
+  speechSynthesis.onvoiceschanged=_loadVoices;
+  setTimeout(_loadVoices,300);
+  setTimeout(_loadVoices,800);
+}
+
+function ariaSpeakText(text,useMale){
+  if(!('speechSynthesis' in window))return;
+  speechSynthesis.cancel();
+  ariaPaused=false;
+  updateAriaPauseBtn();
+  _loadVoices();
+  var u=new SpeechSynthesisUtterance(text);
+  if(useMale){
+    if(_cachedMaleVoice)u.voice=_cachedMaleVoice;
+    u.rate=0.9;u.pitch=0.85;
+  } else {
+    if(_cachedFemaleVoice)u.voice=_cachedFemaleVoice;
+    u.rate=0.92;u.pitch=1.1;
+  }
+  speechSynthesis.speak(u);
+}
+
+function toggleAriaPause(){
+  if(!('speechSynthesis' in window))return;
+  if(speechSynthesis.speaking&&!ariaPaused){speechSynthesis.pause();ariaPaused=true;}
+  else if(ariaPaused){speechSynthesis.resume();ariaPaused=false;}
+  updateAriaPauseBtn();
+}
+function updateAriaPauseBtn(){
+  var btn=document.getElementById('aria-pause-btn');
+  if(btn)btn.textContent=ariaPaused?'▶':'⏸';
+}
+
+// Auto greet
+setTimeout(function(){
+  var g='Welcome to i3D Studio! I\'m Aria, your design assistant. I can help you with quick cost estimates, consultation booking, or answer questions about our architectural services. How may I help you today?';
+  addAriaMsg('aria',g);
+  ariaSpeakText(g);
+},800);
+
+async function ariaSend(text){
+  if(ariaLoading)return;
+  if(!text){text=document.getElementById('aria-input').value;}
+  if(!text||!text.trim())return;
+  document.getElementById('aria-input').value='';
+  ariaLoading=true;
+  ariaChatHistory.push({role:'user',content:text});
+  addAriaMsg('user',text);
+  var assistantDiv=addAriaMsg('aria','...');
+  try{
+    var resp=await fetch(ARIA_CHAT_URL,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ARIA_ANON_KEY},body:JSON.stringify({messages:ariaChatHistory,projectContext:ARIA_PROJECT_CTX})});
+    if(!resp.ok){
+      if(resp.status===402||resp.status===429){
+        var fallback=resp.status===402
+          ?'Our premium voice is recharging. Switching to backup voice to keep helping you!'
+          :'High demand right now — switching to backup voice. Please go ahead!';
+        assistantDiv.textContent=fallback;
+        ariaSpeakText(fallback,true);
+      } else {
+        assistantDiv.textContent='Sorry, I encountered an issue. Please try again.';
+      }
+      ariaLoading=false;return;
+    }
+    var reader=resp.body.getReader();var decoder=new TextDecoder();var buf='';var fullText='';
+    while(true){
+      var r=await reader.read();if(r.done)break;
+      buf+=decoder.decode(r.value,{stream:true});
+      var idx;
+      while((idx=buf.indexOf('\n'))!==-1){
+        var line=buf.slice(0,idx);buf=buf.slice(idx+1);
+        if(line.endsWith('\r'))line=line.slice(0,-1);
+        if(!line.startsWith('data: '))continue;
+        var json=line.slice(6).trim();
+        if(json==='[DONE]')break;
+        try{var p=JSON.parse(json);var c=p.choices&&p.choices[0]&&p.choices[0].delta&&p.choices[0].delta.content;if(c){fullText+=c;assistantDiv.textContent=fullText;}}catch(e){}
+      }
+    }
+    ariaChatHistory.push({role:'assistant',content:fullText});
+    ariaSpeakText(fullText);
+  }catch(e){assistantDiv.textContent='Connection issue. Please try again.';}
+  ariaLoading=false;
+}
 </script>
+
+<!-- Aria Chat FAB -->
+<div id="aria-fab" class="aria-fab" onclick="toggleAria()">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span style="font-size:.82rem;color:var(--white);">Ask Aria</span>
+</div>
+
+<!-- Aria Chat Panel -->
+<div id="aria-panel" class="aria-panel">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid var(--border);">
+    <div style="display:flex;align-items:center;gap:.75rem;">
+      <div style="width:2rem;height:2rem;border-radius:50%;background:rgba(200,168,75,.15);display:flex;align-items:center;justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div>
+        <p style="font-size:.82rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-family:'Cinzel',serif;">Aria</p>
+        <p style="font-size:.7rem;color:var(--text-d);">i3D Studio · Design Assistant</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:.5rem;">
+      <button id="aria-pause-btn" class="aria-ctrl-btn" onclick="toggleAriaPause()" title="Pause/Resume voice">⏸</button>
+      <button onclick="toggleAria()" style="background:none;border:none;color:var(--text-d);cursor:pointer;font-size:1.2rem;">✕</button>
+    </div>
+  </div>
+  <div id="aria-messages" class="aria-messages"></div>
+  <div class="aria-quick">
+    <button onclick="ariaSend('What services do you offer?')">Services</button>
+    <button onclick="ariaSend('How does the quick estimator work?')">Estimator</button>
+    <button onclick="ariaSend('How to book a consultation?')">Consult</button>
+    <button onclick="ariaSend('Tell me about i3D Studio')">About</button>
+  </div>
+  <div class="aria-input-row">
+    <input id="aria-input" placeholder="Ask Aria..." onkeydown="if(event.key==='Enter')ariaSend()"/>
+    <button onclick="ariaSend()" style="background:rgba(200,168,75,.15);border:none;color:var(--gold);padding:.5rem .75rem;border-radius:.375rem;cursor:pointer;">▶</button>
+  </div>
+</div>
+
 </body>
 </html>
