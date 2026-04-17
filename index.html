@@ -342,6 +342,37 @@ function showPage(id){
   if(tabs[map[id]]) tabs[map[id]].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+var _proPrefix="",_proFeature="",_proPrice=0;
+var PRO_STORAGE="i3d-pro-unlocked";
+(function(){try{var u=JSON.parse(localStorage.getItem(PRO_STORAGE)||"[]");u.forEach(function(p){applyUnlock(p);});}catch(e){}})();
+function openProUnlock(prefix,feature,price){
+  _proPrefix=prefix;_proFeature=feature;_proPrice=price;
+  document.getElementById("pro-modal-title").textContent=feature;
+  document.getElementById("pro-modal-sub").textContent="One-time unlock: RS"+price.toLocaleString("en-IN")+". Pay via UPI, send screenshot on WhatsApp, and receive your unlock code.";
+  showPayStep();
+  document.getElementById("proModal").classList.add("open");
+}
+function closeProModal(){document.getElementById("proModal").classList.remove("open");document.getElementById("pro-code-input").value="";document.getElementById("pro-code-err").style.display="none";}
+function showPayStep(){document.getElementById("pro-step-pay").style.display="block";document.getElementById("pro-step-code").style.display="none";}
+function showCodeEntry(){document.getElementById("pro-step-pay").style.display="none";document.getElementById("pro-step-code").style.display="block";document.getElementById("pro-code-input").focus();}
+function sendPaymentWA(){var msg="Payment for Pro Unlock Feature: "+_proFeature+" Amount: RS"+_proPrice.toLocaleString("en-IN")+" Payment screenshot attached. Please send my unlock code. UPI: interactive.dimensions0007@uboi";window.open("https://wa.me/919363113693?text="+encodeURIComponent(msg),"_blank");}
+function validateCode(){
+  var code=document.getElementById("pro-code-input").value.trim().toUpperCase();
+  var errEl=document.getElementById("pro-code-err");
+  if(!/^(CE|BOQ|DE)-\d{4}-\d{4}$/.test(code)){errEl.style.display="block";errEl.textContent="Invalid code format. Expected: CE-1704-8374";return;}
+  if(code.split("-")[0]!==_proPrefix){errEl.style.display="block";errEl.textContent="This code is for a different feature. Please use the correct code.";return;}
+  errEl.style.display="none";
+  try{var u=JSON.parse(localStorage.getItem(PRO_STORAGE)||"[]");if(!u.includes(_proPrefix)){u.push(_proPrefix);localStorage.setItem(PRO_STORAGE,JSON.stringify(u));}}catch(e){}
+  applyUnlock(_proPrefix);closeProModal();showToast("Unlocked: "+_proFeature);
+}
+function applyUnlock(prefix){
+  var l=document.getElementById("pro-lock-"+prefix);
+  var b=document.getElementById("pro-btn-"+prefix);
+  var u=document.getElementById("pro-unlocked-"+prefix);
+  if(l)l.textContent="🔓";if(b)b.style.display="none";if(u)u.style.display="block";
+}
+document.addEventListener("DOMContentLoaded",function(){var ci=document.getElementById("pro-code-input");if(ci)ci.addEventListener("keydown",function(e){if(e.key==="Enter")validateCode();});});
 </script>
 </head>
 <body>
@@ -1358,6 +1389,7 @@ function toggleAria(){
 
 function addAriaMsg(role,text){
   var el=document.getElementById('aria-messages');
+  if(!el)return document.createElement('div');
   var div=document.createElement('div');
   div.className='msg';
   if(role==='user'){
@@ -1525,38 +1557,6 @@ async function ariaSend(text){
   </div>
 </div>
 
-<script>
-var _proPrefix="",_proFeature="",_proPrice=0;
-var PRO_STORAGE="i3d-pro-unlocked";
-(function(){try{var u=JSON.parse(localStorage.getItem(PRO_STORAGE)||"[]");u.forEach(function(p){applyUnlock(p);});}catch(e){}})();
-function openProUnlock(prefix,feature,price){
-  _proPrefix=prefix;_proFeature=feature;_proPrice=price;
-  document.getElementById("pro-modal-title").textContent=feature;
-  document.getElementById("pro-modal-sub").textContent="One-time unlock: RS"+price.toLocaleString("en-IN")+". Pay via UPI, send screenshot on WhatsApp, and receive your unlock code.";
-  showPayStep();
-  document.getElementById("proModal").classList.add("open");
-}
-function closeProModal(){document.getElementById("proModal").classList.remove("open");document.getElementById("pro-code-input").value="";document.getElementById("pro-code-err").style.display="none";}
-function showPayStep(){document.getElementById("pro-step-pay").style.display="block";document.getElementById("pro-step-code").style.display="none";}
-function showCodeEntry(){document.getElementById("pro-step-pay").style.display="none";document.getElementById("pro-step-code").style.display="block";document.getElementById("pro-code-input").focus();}
-function sendPaymentWA(){var msg="Payment for Pro Unlock Feature: "+_proFeature+" Amount: RS"+_proPrice.toLocaleString("en-IN")+" Payment screenshot attached. Please send my unlock code. UPI: interactive.dimensions0007@uboi";window.open("https://wa.me/919363113693?text="+encodeURIComponent(msg),"_blank");}
-function validateCode(){
-  var code=document.getElementById("pro-code-input").value.trim().toUpperCase();
-  var errEl=document.getElementById("pro-code-err");
-  if(!/^(CE|BOQ|DE)-\d{4}-\d{4}$/.test(code)){errEl.style.display="block";errEl.textContent="Invalid code format. Expected: CE-1704-8374";return;}
-  if(code.split("-")[0]!==_proPrefix){errEl.style.display="block";errEl.textContent="This code is for a different feature. Please use the correct code.";return;}
-  errEl.style.display="none";
-  try{var u=JSON.parse(localStorage.getItem(PRO_STORAGE)||"[]");if(!u.includes(_proPrefix)){u.push(_proPrefix);localStorage.setItem(PRO_STORAGE,JSON.stringify(u));}}catch(e){}
-  applyUnlock(_proPrefix);closeProModal();showToast("Unlocked: "+_proFeature);
-}
-function applyUnlock(prefix){
-  var l=document.getElementById("pro-lock-"+prefix);
-  var b=document.getElementById("pro-btn-"+prefix);
-  var u=document.getElementById("pro-unlocked-"+prefix);
-  if(l)l.textContent="🔓";if(b)b.style.display="none";if(u)u.style.display="block";
-}
-document.addEventListener("DOMContentLoaded",function(){var ci=document.getElementById("pro-code-input");if(ci)ci.addEventListener("keydown",function(e){if(e.key==="Enter")validateCode();});});
-<\/script>
 
 <!-- Aria Chat FAB -->
 <div id="aria-fab" class="aria-fab" onclick="toggleAria()">
